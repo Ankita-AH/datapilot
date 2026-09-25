@@ -1,0 +1,11 @@
+import pandas as pd
+df = pd.read_csv("dirty_cafe_sales.csv")
+#print(df.head())
+#print(df.shape)
+#print(df.columns)
+df["Quantity"] = pd.to_numeric(df["Quantity"], errors="coerce")
+df["Price Per Unit"] = pd.to_numeric(df["Price Per Unit"], errors="coerce")
+df["Total Spent"] = pd.to_numeric(df["Total Spent"], errors="coerce")
+print(df.info())
+#print(df["Quantity"].unique())
+#print(df["Quantity"].dtype)
